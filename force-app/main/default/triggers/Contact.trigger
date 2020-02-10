@@ -1,5 +1,7 @@
 trigger Contact on Contact (before insert) {
-    ContactTriggerHandler handler = new ContactTriggerHandler(Trigger.isExecuting, Trigger.size);
-    
-    handler.OnBeforeInsert(Trigger.new);
+    for(Contact record: Trigger.new){
+        if(String.isBlank(record.UUID__c)){
+            record.UUID__c = UtilityClass.newUUID();
+        }
+    }
 }
