@@ -1,10 +1,10 @@
 public with sharing class ContactTriggerHandler {
     private boolean m_isExecuting = false;
-    private integer BatchSize = 0;
+    private integer batchSize = 0;
 
     public ContactTriggerHandler(boolean isExecuting, integer size) {
         m_isExecuting = isExecuting;
-        BatchSize = size;
+        batchSize = size;
     }
 
     public void OnBeforeInsert(Contact[] newContacts){
