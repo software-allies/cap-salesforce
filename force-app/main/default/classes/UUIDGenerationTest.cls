@@ -57,4 +57,7 @@ public class UUIDGenerationTest
     Test.stopTest();
     system.assertEquals('raacc429-d554-e-9e-bce2-765de19a736a', [SELECT SACAP__UUID__c FROM Opportunity WHERE Id =: newOpportunity.Id].SACAP__UUID__c);
   }
+  static testMethod void testNewUUIDGenerator(){
+      system.assertNotEquals(null, UtilityClass.newUUID());
+  }
 }
