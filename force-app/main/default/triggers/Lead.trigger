@@ -1,5 +1,7 @@
 trigger Lead on Lead (before insert) {
-    LeadTriggerHandler handler = new LeadTriggerHandler(Trigger.isExecuting, Trigger.size);
-
-    handler.OnBeforeInsert(Trigger.new);
+    for(Lead record: Trigger.new){
+        if(String.isBlank(record.UUID__c)){
+            record.UUID__c = UtilityClass.newUUID();
+        }
+    }
 }
