@@ -1,5 +1,7 @@
 trigger Account on Account (before insert) {
-    AccountTriggerHandler handler = new AccountTriggerHandler(Trigger.isExecuting, Trigger.size);
-    
-    handler.OnBeforeInsert(Trigger.new);
+    for(Account record: Trigger.new){
+        if(String.isBlank(record.UUID__c)){
+            record.UUID__c = UtilityClass.newUUID();
+        }
+    }
 }
