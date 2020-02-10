@@ -1,9 +1,9 @@
 public with sharing class ContactTriggerHandler {
-    private boolean m_isExecuting = false;
+    private boolean mIsExecuting = false;
     private integer batchSize = 0;
 
     public ContactTriggerHandler(boolean isExecuting, integer size) {
-        m_isExecuting = isExecuting;
+        mIsExecuting = isExecuting;
         batchSize = size;
     }
 
