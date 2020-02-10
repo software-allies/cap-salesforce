@@ -11,7 +11,7 @@ public with sharing class LeadTriggerHandler {
         setUUID(newLeads);
     }
 
-    public static void setUUID(Lead[] newLeads){
+    public void setUUID(Lead[] newLeads){
         for(Lead recordToUpdate: newLeads){
             if(String.isBlank(recordToUpdate.UUID__c)){
                 recordToUpdate.UUID__c = UtilityClass.newUUID();
