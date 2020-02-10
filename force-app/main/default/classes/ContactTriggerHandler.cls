@@ -11,7 +11,7 @@ public with sharing class ContactTriggerHandler {
         setUUID(newContacts);
     }
 
-    public static void setUUID(Contact[] newContacts){
+    public void setUUID(Contact[] newContacts){
         for(Contact recordToUpdate: newContacts){
             if(String.isBlank(recordToUpdate.UUID__c)){
                 recordToUpdate.UUID__c = UtilityClass.newUUID();
