@@ -1,8 +1,8 @@
 global class InitializeRecordsWithUUID implements Database.Batchable<sObject>{
     global final String queryString;
  
-    global InitializeRecordsWithUUID(String name){
-        queryString = 'SELECT Id, SACAP__UUID__c FROM '+name+' WHERE SACAP__UUID__c = null';
+    global InitializeRecordsWithUUID(String objectName){
+        queryString = 'SELECT Id, SACAP__UUID__c FROM '+objectName+' WHERE SACAP__UUID__c = null';
     }
  
     global Database.QueryLocator start(Database.BatchableContext BC){
